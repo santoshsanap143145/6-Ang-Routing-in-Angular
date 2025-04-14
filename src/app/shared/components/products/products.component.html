@@ -1,1 +1,12 @@
-<p>products works!</p>
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li 
+      [routerLink]="['/products', prod.pid]"
+      class="list-group-item" 
+      *ngFor="let prod of productsArr">
+        {{prod.pname}} {{prod.pid}}
+      </li>
+    </ul>
+  </div>
+</div>

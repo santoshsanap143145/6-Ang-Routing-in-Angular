@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  loadUserOnClick(){
+    // get id from params and make API call
+    // if sucess then navigate to users component
+
+    this._router.navigate(['/users']) // absolute Routing
   }
 
 }

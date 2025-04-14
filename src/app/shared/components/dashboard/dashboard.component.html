@@ -1,1 +1,62 @@
-<p>dashboard works!</p>
+
+
+
+
+<!-- Angular Routing -->
+<!-- Routing in Angular is the client-side navigation mechanism in a Single Page Application (SPA). Instead of reloading the whole page, Angular dynamically loads components based on the URL path, giving the feel of navigating a traditional multi-page site. -->
+
+
+<!-- Absolute Routing  -->
+<!-- Absolute routing uses a root-based path, meaning it always starts from the root of the app (/), regardless of the current component's or route's location. 
+
+ - When you want to navigate to a specific path regardless of the current route. 
+ - It's simple and safe when you're not dealing with nested routes. -->
+
+
+ <!-- absolute routing == baseUrl + routerLinkValue -->
+  <!-- http://localhost:4200/users -->
+
+<!-- <button routerLink="/users" class="btn btn-info">Go to Users</button> -->
+
+
+
+<!-- Relative Routing -->
+<!-- Relative routing navigates based on the current activated route. That means the path is relative to where you currently are in the route tree. 
+
+- When inside nested/child components, and you want to navigate to another sibling or child route.
+- Makes the route handling more flexible in modular apps.-->
+
+<!-- relative routing == activeUrl + routerLinkValue -->
+<!-- http://localhost:4200/home/users -->
+
+<!-- example :- -->
+<!--  <button routerLink="users" class="btn btn-info">Go to Users</button> -->
+
+
+<!-- now we will creat navigation through ts file by adding click event to button-->
+
+<button (click)="loadUserOnClick()" class="btn btn-info">Go to Users</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

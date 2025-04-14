@@ -7,6 +7,8 @@ import { UsersComponent } from './shared/components/users/users.component';
 import { ProductsComponent } from './shared/components/products/products.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductComponent } from './shared/components/products/product/product.component';
+import { ProductFormComponent } from './shared/components/products/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     UsersComponent,
     ProductsComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
