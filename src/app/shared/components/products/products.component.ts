@@ -8,7 +8,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  productsArr !:Array<Iproduct>
+  productsArr :Array<Iproduct> = []
   constructor(private _productService: ProductsService) { }
 
   ngOnInit(): void {

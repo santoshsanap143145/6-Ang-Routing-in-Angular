@@ -1,1 +1,42 @@
-<p>product-form works!</p>
+<!-- <h2 *ngIf="!isEditMode">Add Product</h2>
+<h2 *ngIf="isEditMode">Update Product</h2> -->
+
+<h2>{{ isEditMode ? "Update Product" : "Add Product" }}</h2>
+
+<form #productForm="ngForm" (ngSubmit)="submitOnClick()">
+  <div class="form-group">
+    <label for="pname">Product Name</label>
+    <input
+      required
+      ngModel
+      type="text"
+      name="pname"
+      class="form-control"
+      id="pname"
+    />
+  </div>
+  <div class="form-group">
+    <label for="pstatus">Product Status</label>
+    <select required ngModel name="pstatus" id="pstatus" class="form-control">
+      <option value="In-progress">In-progress</option>
+      <option value="Dispatched">Dispatched</option>
+      <option value="Delivered">Delivered</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="canReturn">Product Can Return</label>
+    <select
+      required
+      ngModel
+      name="canReturn"
+      id="canReturn"
+      class="form-control"
+    >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-info">
+    {{ isEditMode ? "Update Product" : "Add Product" }}
+  </button>
+</form>

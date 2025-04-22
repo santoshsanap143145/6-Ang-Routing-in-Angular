@@ -1,8 +1,6 @@
-
-
-export interface Iproduct{
-    pname: string;
-    pid: string;
-    pstatus: string;
-    canReturn: number;
+export interface Iproduct {
+  pname: string;
+  pid: string;
+  pstatus: 'In-progress' | 'Dispatched' | 'Delivered';
+  canReturn: number;
 }

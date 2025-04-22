@@ -1,12 +1,29 @@
 <div class="row">
+  <div class="col-12 mb-4 text-right">
+    <button routerLink="addproduct" class="btn btn-outline-info">
+      Add Product
+    </button>
+  </div>
+</div>
+
+<div class="row" *ngIf="productsArr.length > 0;else noprodData">
   <div class="col-md-4">
     <ul class="list-group">
-      <li 
-      [routerLink]="['/products', prod.pid]"
-      class="list-group-item" 
-      *ngFor="let prod of productsArr">
-        {{prod.pname}} {{prod.pid}}
+      <li
+        [routerLink]="[prod.pid]"
+        class="list-group-item"
+        *ngFor="let prod of productsArr"
+      >
+        {{ prod.pname }}
       </li>
     </ul>
   </div>
 </div>
+<ng-template #noprodData>
+  <p class="alert alert-info">No products Information</p>
+</ng-template>
+<!-- 
+    //baseUrl/products/prodId
+    currentUrl = baseUrl/products
+    currentUrl/prodId
+-->

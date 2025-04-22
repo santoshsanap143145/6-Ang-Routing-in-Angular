@@ -1,1 +1,32 @@
-<p>users works!</p>
+<div class="row">
+  <div class="col-12 mb-4 text-right">
+    <button routerLink="adduser" class="btn btn-outline-info">
+      Add User
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group userList">
+      <!-- <li
+        [routerLink]="[user.userId]"
+        class="list-group-item"
+        *ngFor="let user of usersArr"
+      >
+        {{ user.username }} {{user.userId}}
+      </li> -->
+      <li
+        routerLink="{{user.userId}}"
+        class="list-group-item"
+        *ngFor="let user of usersArr"
+      >
+        {{ user.userName }} {{user.userId}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- 
+    baseUrl/users/123
+-->

@@ -9,6 +9,13 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductComponent } from './shared/components/products/product/product.component';
 import { ProductFormComponent } from './shared/components/products/product-form/product-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './shared/components/users/user/user.component';
+import { UserFormComponent } from './shared/components/users/user-form/user-form.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material/material.module';
+import { GetConfirmationComponent } from './shared/components/get-confirmation/get-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +25,19 @@ import { ProductFormComponent } from './shared/components/products/product-form/
     ProductsComponent,
     NavbarComponent,
     ProductComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    UserComponent,
+    UserFormComponent,
+    PageNotFoundComponent,
+    GetConfirmationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
