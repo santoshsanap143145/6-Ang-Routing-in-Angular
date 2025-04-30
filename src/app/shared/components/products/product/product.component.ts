@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/models/product';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { GetConfirmationComponent } from '../../get-confirmation/get-confirmation.component';
@@ -15,18 +15,19 @@ export class ProductComponent implements OnInit {
   product!: Iproduct;
 
   constructor(
-    private _routes: ActivatedRoute,
-    private _productSerrvice: ProductsService,
-    private _matDialog: MatDialog
+    private _Activatedroute: ActivatedRoute,
+    private _productService: ProductsService,
+    private _matDialog: MatDialog,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
     // console.log(this._routes.snapshot.params['pid'])
-    this.prodId = this._routes.snapshot.params['prodId'];
+    this.prodId = this._Activatedroute.snapshot.params['prodId'];
     console.log(this.prodId);
 
     // GET ID and make API call using service to get single product
-    this.product = this._productSerrvice.getProduct(this.prodId);
+    this.product = this._productService.getProduct(this.prodId);
     console.log(this.product);
   }
 
@@ -53,8 +54,17 @@ export class ProductComponent implements OnInit {
     );
     matDialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        this._productSerrvice.removeProduct(this.product);
+        this._productService.removeProduct(this.product);
       }
     });
+  }
+
+  navigateToeditForm(){
+    
+    this._router.navigate(['edit'], {
+      relativeTo: this._Activatedroute,
+      queryParamsHandling: 'preserve',
+      // queryParams: {} // we can also add queryParams here
+    })
   }
 }

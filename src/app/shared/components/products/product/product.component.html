@@ -9,7 +9,17 @@
         >
           Edit
         </button> -->
-        <button routerLink="edit" class="btn btn-sm btn-outline-info mr-4">
+
+        <!-- <button routerLink="edit"
+        [queryParamsHandling]="'preserve'"
+        class="btn btn-sm btn-outline-info mr-4">
+          Edit
+        </button> -->
+
+        <button
+          (click)="navigateToeditForm()"
+          class="btn btn-sm btn-outline-info mr-4"
+        >
           Edit
         </button>
         <button (click)="onRemove()" class="btn btn-sm btn-outline-danger">

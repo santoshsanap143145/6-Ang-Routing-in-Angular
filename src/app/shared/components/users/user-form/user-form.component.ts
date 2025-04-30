@@ -14,6 +14,7 @@ export class UserFormComponent implements OnInit {
   isEditMode: boolean = false;
   userId!: string; // bydefault val is undefined
   userForm!: FormGroup; // bydefault undefined
+  updateBtnDisable: boolean = false;
   constructor(
     private _activeRoutes: ActivatedRoute,
     private _uuidService: UuidService,
@@ -35,6 +36,13 @@ export class UserFormComponent implements OnInit {
         this.userForm.patchValue(user);
       });
     }
+
+    let userRole = this._activeRoutes.snapshot.queryParams['userRole'];
+
+    if (userRole && userRole.toLowerCase().includes('candidate')) {
+      this.userForm.disable();
+      this.updateBtnDisable = true;
+    }
   }
 
   onUserSubmit() {
@@ -49,8 +57,7 @@ export class UserFormComponent implements OnInit {
           ...this.userForm.value,
           userId: this.userId,
         };
-        this._userService.updateUser(updatedUser)
-        
+        this._userService.updateUser(updatedUser);
       }
     }
   }

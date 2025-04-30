@@ -18,6 +18,7 @@
       </li> -->
       <li
         routerLink="{{user.userId}}"
+        [queryParams]="{userName : user.userName, userRole : user.userRole}"
         class="list-group-item"
         *ngFor="let user of usersArr"
       >
